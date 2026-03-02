@@ -15,15 +15,14 @@ void bfs(int src)
         int par = q.front();
         q.pop();
 
-        cout << par << " ";
+        cout<< par<<" ";
 
         for (int child : adj_list[par])
         {
-            if (vis[child] == false)
-            {
+            if(vis[child]== false){
                 q.push(child);
                 vis[child] = true;
-            }
+            } 
         }
     }
 }
@@ -37,12 +36,13 @@ int main()
     {
         int a, b;
         cin >> a >> b;
+ 
         adj_list[a].push_back(b);
         adj_list[b].push_back(a);
     }
 
-    memset(vis, false, sizeof(vis));
-    bfs(0);
+    memset(vis,false,sizeof(vis)); 
 
+    bfs(0);
     return 0;
 }
